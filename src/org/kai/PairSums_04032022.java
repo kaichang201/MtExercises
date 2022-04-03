@@ -23,12 +23,16 @@ public class PairSums_04032022 {
         int[] testcase2a = {1,5,3,3,3};
         int testcase2k = 6; // 4. 1,5, 3,3 3,3, 3,3
 
+        int[] testcase3a = {3,3,3,3,3};
+        int testcase3k = 6; // n*(n-1)/2 = 10
+
 
         long startTime = System.currentTimeMillis();
 
         // Strategy 1
        System.out.println(me.numberOfWays(testcase1a,testcase1k)); // 3
         System.out.println(me.numberOfWays(testcase2a,testcase2k)); // 3
+        System.out.println(me.numberOfWays(testcase3a,testcase3k)); // 3
 
 
         System.out.println("Time taken " + (System.currentTimeMillis() - startTime));
