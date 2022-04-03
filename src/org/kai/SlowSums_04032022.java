@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 
 //
 /*
- * Start 4/3/2022 11;38am
+ * Start 4/3/2022 11;38am. 11:53. 15mins
  * Support we have a list of N numbers, and repeat the following operation until we're left with only a single number:
  *  - Chose any 2 numbers and replace them with their sum.
  *  - Moreover, we associate a penalty with each operation equal ot the value of the new number.
