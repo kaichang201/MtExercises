@@ -37,9 +37,9 @@ public class PassingYearbooks_04102022 {
         long startTime = System.currentTimeMillis();
 
         // Strategy 1
-    //   System.out.println(Arrays.toString(me.findSignatureCounts(testcase1a))); // 3
-    //    System.out.println(Arrays.toString(me.findSignatureCounts(testcase2a))); // 3
-    //    System.out.println(Arrays.toString(me.findSignatureCounts(testcase3a))); // 3
+       System.out.println(Arrays.toString(me.findSignatureCounts(testcase1a))); // 3
+        System.out.println(Arrays.toString(me.findSignatureCounts(testcase2a))); // 3
+        System.out.println(Arrays.toString(me.findSignatureCounts(testcase3a))); // 3
 
 
         System.out.println("Time taken " + (System.currentTimeMillis() - startTime));
@@ -48,13 +48,27 @@ public class PassingYearbooks_04102022 {
 
     /*
      * Strategy 1:
-     * Keep a TreeSet of Students who are still passing
-     * Time complexity. O(n^2)
-     * Space complexity, O(N)
+     * Picked up solution from Leetcode.
+     * Problem description pretty bad. Basically just look up array to decide who to pass it to next.
      */
     boolean debug = true;
     int[] findSignatureCounts(int[] arr) {
-        return null;
+        // Write your code here
+        int[] output = new int[arr.length];
+
+        for(int student =1; student <= arr.length;student++){
+            int bookOwner= student;
+            int currentHolder = student;
+
+            do{
+                if (debug)
+                    System.out.println("student: " + student + " currentHolder: "+ currentHolder );
+                output[student-1] +=1;
+                currentHolder = arr[currentHolder-1];
+            }while(currentHolder != bookOwner);
+
+        }
+        return output;
 
     }
 
