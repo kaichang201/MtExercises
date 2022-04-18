@@ -55,17 +55,17 @@ public class PassingYearbooks_04102022 {
     int[] findSignatureCounts(int[] arr) {
         // Write your code here
         int[] output = new int[arr.length];
+        Arrays.fill(output, 1); // sign self
 
         for(int student =1; student <= arr.length;student++){
-            int bookOwner= student;
-            int currentHolder = student;
+            int currentHolder = arr[student-1]; //pass
 
-            do{
+            while(currentHolder != student) { // keep passing until I hold it myself
                 if (debug)
                     System.out.println("student: " + student + " currentHolder: "+ currentHolder );
-                output[student-1] +=1;
-                currentHolder = arr[currentHolder-1];
-            }while(currentHolder != bookOwner);
+                output[student-1] +=1;  // output is 0-indexed.
+                currentHolder = arr[currentHolder-1]; // pass to next student
+            }
 
         }
         return output;
